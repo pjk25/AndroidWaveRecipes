@@ -1,0 +1,3 @@
+[submodule "waverecipealgorithm"]
+	path = waverecipealgorithm
+	url = git://github.com/pjk25/waverecipealgorithm.git
