@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipe id="edu.berkeley.waverecipe.KcalRecipe" version="2011-07-19 14:00:00.00-0700" >
+    <name>Kcal</name>
+    <description>
+        Estimates energy expenditure in KiloCalories.
+    </description>
+    <sensors>
+        <sensor type="accelerometer" units="-m/s^2" ref-id="input_accelerometer">
+            <channel name="x" />
+            <channel name="y" />
+            <channel name="z" />
+        </sensor>
+    </sensors>
+    <output name="Kcal" units="Kcal">
+        <channel name="kcal" />
+    </output>
+    <granularity-table type="discreet">
+        <entry>
+            <!-- rates are assumed to be in Hz, precision is in the unit of the referenced sensor-->
+            <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+            <output rate="0.016666667" precision="1" /><!-- This is a guess at output precision -->
+        </entry>
+        <!-- Note: We need a way for the recipe to realize its target rate, so that we
+                   can have several output entries with the same inputs here -->
+        <!-- <entry>
+                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+                    <output rate="10" precision="0.010" />
+                </entry>
+                <entry>
+                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+                    <output rate="1" precision="0.001" />
+                </entry>
+                <entry>
+                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+                    <output rate="0.2" precision="0.100" />
+                </entry> -->
+    </granularity-table>
+    <algorithm>
+        <class interface="WaveRecipeAlgorithm" name="edu.berkeley.waverecipe.passthrough.PassThroughAlgorithm" />
+    </algorithm>
+</recipe>
