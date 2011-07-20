@@ -18,7 +18,8 @@
         <entry>
             <!-- rates are assumed to be in Hz, precision is in the unit of the referenced sensor-->
             <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
-            <output rate="0.016666667" precision="1" /><!-- This is a guess at output precision -->
+            <!-- 1/59.5s output rate -->
+            <output rate="0.01680672268907562" precision="1" /><!-- This is a guess at output precision -->
         </entry>
         <!-- Note: We need a way for the recipe to realize its target rate, so that we
                    can have several output entries with the same inputs here -->
