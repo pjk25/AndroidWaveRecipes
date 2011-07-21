@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<recipe id="edu.berkeley.waverecipe.KcalRecipe" version="2011-07-19 14:00:00.00-0700" >
+<recipe id="edu.berkeley.waverecipe.Kcal" version="2011-07-21 14:00:00.00-0700" >
     <name>Kcal</name>
     <description>
         Estimates energy expenditure in KiloCalories.
