@@ -37,6 +37,6 @@
                 </entry> -->
     </granularity-table>
     <algorithm>
-        <class interface="WaveRecipeAlgorithm" name="edu.berkeley.waverecipe.passthrough.PassThroughAlgorithm" />
+        <class interface="WaveRecipeAlgorithm" name="edu.berkeley.waverecipe.KcalAlgorithm" />
     </algorithm>
 </recipe>
