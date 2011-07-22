@@ -13,6 +13,7 @@ import edu.berkeley.androidwave.waverecipe.waverecipealgorithm.*;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
 import android.util.Log;
+import java.lang.Math;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,12 +27,12 @@ public class KcalAlgorithm implements WaveRecipeAlgorithm {
     public static final String[] CHANNEL_NAMES = {"x", "y", "z"};
     public static final int CHANNEL_COUNT = CHANNEL_NAMES.length;
     
-    private static final int WINDOW_SAMPLES = 20 * 2;   // 20Hz assumption
+    private static final int WINDOW_SAMPLES = 20 * 2;   // 20Hz input assumption
     
     protected WaveRecipeAlgorithmListener theListener;
     
     protected long lastReportTime = 0;
-    protected int reportInterval = 60*1000;
+    protected int reportInterval = 60 * 1000; // default interval of 60 seconds, should be adjusted in setAuthorizedMaxOutputRate
     protected long windowLastTime = 0;
     
     protected int sampleIndex = 0;
@@ -39,6 +40,10 @@ public class KcalAlgorithm implements WaveRecipeAlgorithm {
     
     protected double accumulatedH = 0;
     protected double accumulatedV = 0;
+    
+    public void setAuthorizedMaxOutputRate(double maxOutputRate) {
+        reportInterval = (int)Math.ceil(1000.0 / maxOutputRate);
+    }
     
     public boolean setWaveRecipeAlgorithmListener(Object listener) {
         try {
