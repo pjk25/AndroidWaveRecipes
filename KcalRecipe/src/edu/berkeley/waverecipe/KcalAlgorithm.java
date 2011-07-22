@@ -62,6 +62,7 @@ public class KcalAlgorithm implements WaveRecipeAlgorithm {
         if (sampleIndex == WINDOW_SAMPLES) {
             calculateComponents();
             windowLastTime = time;
+            sampleIndex = 0;
         }
         
         // really we could do this on a separate timer for an exact interval
