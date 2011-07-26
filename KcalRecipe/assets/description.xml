@@ -21,20 +21,18 @@
             <!-- 1/59.5s output rate -->
             <output rate="0.01680672268907562" precision="1" /><!-- This is a guess at output precision -->
         </entry>
-        <!-- Note: We need a way for the recipe to realize its target rate, so that we
-                   can have several output entries with the same inputs here -->
-        <!-- <entry>
-                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
-                    <output rate="10" precision="0.010" />
-                </entry>
-                <entry>
-                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
-                    <output rate="1" precision="0.001" />
-                </entry>
-                <entry>
-                    <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
-                    <output rate="0.2" precision="0.100" />
-                </entry> -->
+        <entry>
+            <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+            <output rate="10" precision="0.010" />
+        </entry>
+        <entry>
+            <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+            <output rate="1" precision="0.001" />
+        </entry>
+        <entry>
+            <input ref-id="input_accelerometer" rate="25" precision="0.001"/>
+            <output rate="0.2" precision="0.100" />
+        </entry>
     </granularity-table>
     <algorithm>
         <class interface="WaveRecipeAlgorithm" name="edu.berkeley.waverecipe.KcalAlgorithm" />
